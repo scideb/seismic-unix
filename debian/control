@@ -1,0 +1,32 @@
+Source: seismic-unix
+Section: math
+Priority: optional
+Maintainer: Alexis Enrique Rodríguez Gutiérrez <alexisrodgtz@gmail.com>
+Build-Depends: debhelper (>= 9), scons, dh-exec (>=0.3)
+Standards-Version: 3.9.5
+Homepage: http://www.cwp.mines.edu/
+
+Package: seismic-unix-base
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description:  Seismic Unix is an open source seismic utilities package supported by the Center for Wave Phenomena (CWP) at the Colorado School of Mines (CSM).
+ The Seismic Unix Project is partially supported by the CWP Consortium Project. 
+ In the past, the Seismic Unix Project received partial support from the Gas 
+ Research Institute (GRI) and the Society of Exploration Geophysicists Foundation
+ 
+Package: libcwp
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends},seismic-unix-base
+Description:  Seismic Unix is an open source seismic utilities package supported by the Center for Wave Phenomena (CWP) at the Colorado School of Mines (CSM).
+ The Seismic Unix Project is partially supported by the CWP Consortium Project. 
+ In the past, the Seismic Unix Project received partial support from the Gas 
+ Research Institute (GRI) and the Society of Exploration Geophysicists Foundation
+  
+Package: libcwp-dev
+Architecture: any
+Depends: ${misc:Depends}, libcwp (= ${binary:Version})
+Description:  Seismic Unix is an open source seismic utilities package supported by the Center for Wave Phenomena (CWP) at the Colorado School of Mines (CSM).
+ The Seismic Unix Project is partially supported by the CWP Consortium Project. 
+ In the past, the Seismic Unix Project received partial support from the Gas 
+ Research Institute (GRI) and the Society of Exploration Geophysicists Foundation
+  
