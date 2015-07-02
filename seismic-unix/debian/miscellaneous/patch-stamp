@@ -1,0 +1,6 @@
+debian/patches/001-replace-to-sureplace.dpatch (Alexis Enrique Rodríguez Gutiérrez <alexisrodgtz@gmail.com>):
+  change replace to sureplace
+
+debian/patches/002-psmerge-to-supsmerge.dpatch (Alexis Enrique Rodríguez Gutiérrez <alexisrodgtz@gmail.com>):
+  To change binary s name psmerge to supsmerge for incompatibilities
+

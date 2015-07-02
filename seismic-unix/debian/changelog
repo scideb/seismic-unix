@@ -1,0 +1,13 @@
+seismic-unix (43R8-2) UNRELEASED; urgency=medium
+
+  *Add a debian/watch 
+
+ -- Alexis Enrique Rodríguez Gutiérrez <alexisrodgtz@gmail.com>  Wed, 01 Jul 2015 22:32:17 -0500
+
+seismic-unix (43R8-1) unstable; urgency=low
+
+  * Initial release of Seismic Unix
+  * To change binary's name 'replace' to 'sureplace' for incompatibilities with 'replace' of package mysql-server-5.5 5.5.43-0+deb8u1
+  * To change binary's name 'psmerge' to 'supsmerge' for incompatibilities with 'psmerge' of package psutils
+
+ -- Alexis Enrique Rodríguez Gutiérrez <alexisrodgtz@gmail.com>  Sun, 17 May 2015 23:27:43 -0500

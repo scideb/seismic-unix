@@ -1,0 +1,4 @@
+# watch control file for uscan
+version=3
+
+ftp://ftp.cwp.mines.edu/pub/cwpcodes/cwp_su_all_(.+R.+)\.tgz
