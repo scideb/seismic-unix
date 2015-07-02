@@ -1,0 +1,81 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 001-replace-to-sureplace.dpatch by Alexis Enrique Rodríguez Gutiérrez <alexisrodgtz@gmail.com>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: change replace to sureplace
+
+@DPATCH@
+diff -urNad '--exclude=CVS' '--exclude=.svn' '--exclude=.git' '--exclude=.arch' '--exclude=.hg' '--exclude=_darcs' '--exclude=.bzr' seismic-unix-0.1~/src/cwp/shell/Makefile seismic-unix-0.1/src/cwp/shell/Makefile
+--- seismic-unix-0.1~/src/cwp/shell/Makefile	2012-05-03 16:28:19.000000000 -0500
++++ seismic-unix-0.1/src/cwp/shell/Makefile	2015-05-18 20:27:58.288040846 -0500
+@@ -14,7 +14,7 @@
+ 	$B/overwrite	\
+ 	$B/precedence	\
+ 	$B/rcslocks	\
+-	$B/replace	\
++	$B/sureplace	\
+ 	$B/sys_arch	\
+ 	$B/this_year	\
+ 	$B/time_now	\
+diff -urNad '--exclude=CVS' '--exclude=.svn' '--exclude=.git' '--exclude=.arch' '--exclude=.hg' '--exclude=_darcs' '--exclude=.bzr' seismic-unix-0.1~/src/cwp/shell/replace.sh seismic-unix-0.1/src/cwp/shell/replace.sh
+--- seismic-unix-0.1~/src/cwp/shell/replace.sh	1993-06-17 12:23:27.000000000 -0500
++++ seismic-unix-0.1/src/cwp/shell/replace.sh	1969-12-31 19:00:00.000000000 -0500
+@@ -1,27 +0,0 @@
+-#! /bin/sh
+-# /*********************** self documentation **********************/
+-# REPLACE - REPLACE string1 with string2  in files
+-#
+-# Usage:  replace string1 string2 files
+-#
+-#/**************** end self doc ********************************/
+-
+-# Kernighan and Pike - page 155
+-
+-BIN=${CWPROOT}/bin
+-PATH=/bin:/usr/bin:/usr/ucb:$BIN
+-
+-case $# in
+-0|1|2)
+-	echo 'Usage: replace string1 string2 files' 1>&2
+-	exit 1
+-esac
+-
+-left="$1"; right="$2"; shift; shift
+-
+-for i
+-do
+-	$BIN/overwrite $i sed "s@$left@$right@g" $i
+-done
+-
+-exit 0
+diff -urNad '--exclude=CVS' '--exclude=.svn' '--exclude=.git' '--exclude=.arch' '--exclude=.hg' '--exclude=_darcs' '--exclude=.bzr' seismic-unix-0.1~/src/cwp/shell/sureplace.sh seismic-unix-0.1/src/cwp/shell/sureplace.sh
+--- seismic-unix-0.1~/src/cwp/shell/sureplace.sh	1969-12-31 19:00:00.000000000 -0500
++++ seismic-unix-0.1/src/cwp/shell/sureplace.sh	1993-06-17 12:23:27.000000000 -0500
+@@ -0,0 +1,27 @@
++#! /bin/sh
++# /*********************** self documentation **********************/
++# REPLACE - REPLACE string1 with string2  in files
++#
++# Usage:  replace string1 string2 files
++#
++#/**************** end self doc ********************************/
++
++# Kernighan and Pike - page 155
++
++BIN=${CWPROOT}/bin
++PATH=/bin:/usr/bin:/usr/ucb:$BIN
++
++case $# in
++0|1|2)
++	echo 'Usage: replace string1 string2 files' 1>&2
++	exit 1
++esac
++
++left="$1"; right="$2"; shift; shift
++
++for i
++do
++	$BIN/overwrite $i sed "s@$left@$right@g" $i
++done
++
++exit 0
